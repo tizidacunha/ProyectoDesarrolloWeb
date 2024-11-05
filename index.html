@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Shark</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+    <div class="contenedor-header">
+        <header>
+            <img style="height: 50px;" src="imgs/logo.png" alt="Logo">
+            <h1>GYM <span class="textoColor">SHARK</span></h1>
+            <nav id="nav">
+                <a href="#inicio" onclick="seleccionar()">inicio</a>
+                <a href="#nosotros" onclick="seleccionar()">Nosotros</a>
+                <a href="#servicios" onclick="seleccionar()">Servicios</a>
+                <a href="#contacto" onclick="seleccionar()">Contacto</a>
+            </nav>
+            <div class="redes">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+            </div>
+            <!-- Icono del menu responsive -->
+            <div id="icono-nav" class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>                
+        </header>
+    </div>
+
+    
+    <!-- SECCION INICIO -->
+    <section id="inicio" class="inicio">
+        <div class="contenido-seccion">
+            <div class="info">
+                <h2>Tu única competencia <span class="textoColor">eres tú mismo.</span><br> Cada repetición te acerca a la mejor versión de ti.</h2>
+                <p>Triunfar es más facil de lo que piensas!</p>
+            </div>
+            <div class="opciones">
+                <div class="opcion">
+                    01.RUTINAS
+                </div>
+                <div class="opcion">
+                    02.VIDEOS/FOTOS
+                </div>
+                <div class="opcion">
+                    03.SEGUIMIENTO
+                </div>
+                <div class="opcion">
+                    04.NUTRICION
+            </div>
+        </div>
+    </section>
+
+
+
+    
+    <!-- SECCION NOSOTROS -->
+    <section id="nosotros" class="nosotros">
+        <div class="fila">
+            <div class="col">
+                <img src="imgs/nosotros.png" alt="">
+            </div>
+            <div class="col">
+                <div class="contenedor-titulo">
+                    <div class="numero">
+                        01
+                    </div>
+                    <div class="info">
+                        <span class="frase">LA MEJOR EXPERIENCIA</span>
+                        <h2>NOSOTROS</h2>
+                    </div>
+                </div>
+                <p class="p-especial">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur necessitatibus quod provident libero, nam corrupti, adipisci ea inventore cum aliquid asperiores pariatur harum sunt. Tempore expedita atque quos ipsum nisi.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- SECCION SERVICIOS -->
+    <section class="servicios" id="servicios">
+        <div class="contenido-seccion">
+            <div class="fila">
+                <div class="col">
+                    <div class="contenedor-titulo">
+                        <div class="numero">
+                            02
+                        </div>
+                        <div class="info">
+                            <h2>SERVICIOS</h2>
+                        </div>
+                    </div>
+                    <p class="p-especial">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur necessitatibus quod provident libero, nam corrupti, adipisci ea inventore cum aliquid asperiores pariatur harum sunt. Tempore expedita atque quos ipsum nisi.</p>
+                </div>  
+            </div>
+
+            <div class="fila-nosotros">
+                <div class="col1">
+                    <span class="frase">
+                        <span class="textoColor">ENTRENA</span> DIFERENTE
+                    </span>
+                    <h2>OBTENE <span class="textoColor">TU</span> RUTINA!</h2>
+                </div>
+                <div class="col2">
+                    <button id="miBoton">Rutina Ya</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="miSeccion">
+        <section id="rutinas" class="rutinas">
+            <div class="fila">
+                <div class="col">
+                    <img src="imgs/nosotros.png" alt="">
+                </div>
+                <div class="col">
+                    <div class="contenedor-titulo">
+                        <div class="numero">
+                            02.1
+                        </div>
+                        <div class="info">
+                            <span class="frase">LA MEJOR EXPERIENCIA</span>
+                            <h2>RUTINAS</h2> <!-- Cambiado de "NOSOTROS" a "RUTINAS" -->
+                        </div>
+                    </div>
+                    <p class="p-especial">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur necessitatibus quod provident libero, nam corrupti, adipisci ea inventore cum aliquid asperiores pariatur harum sunt. Tempore expedita atque quos ipsum nisi.</p>
+                </div>
+                <div>
+                    <!-- Campo de input -->
+                    <input type="number" id="numInput" placeholder="Ingresa tu edad">
+                        
+                    <!-- Botón para mostrar las imágenes -->
+                    <button onclick="mostrarImagenes()">Mostrar Imágenes</button>
+
+                    <!-- Contenedor donde aparecerán las imágenes -->
+                    <div id="imagenesContainer"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+
+    <script>
+        // Obtener el botón y la sección
+        const boton = document.getElementById('miBoton');
+        const seccion = document.getElementById('miSeccion');
+
+        // Añadir un evento al botón
+        boton.addEventListener('click', function() {
+            // Cambiar el estado de la sección
+            if (seccion.style.display === 'none') {
+                seccion.style.display = 'block'; // Muestra la sección
+                boton.textContent = 'Ocultar Rutina'; // Cambia el texto del botón
+            } else {
+                seccion.style.display = 'none'; // Oculta la sección
+                boton.textContent = 'Obtener Rutina'; // Cambia el texto del botón
+            }
+        });
+
+        function mostrarImagenes() {
+            // Obtiene el valor del input y convierte a número
+            var cantidad = parseInt(document.getElementById("numInput").value);
+
+            // Limpia el contenedor de imágenes por si ya había algo
+            var container = document.getElementById("imagenesContainer");
+            container.innerHTML = "";
+
+            // Valida que el número sea positivo y razonable (por ejemplo, menor que 50)
+            if (isNaN(cantidad) || cantidad <= 0 || cantidad > 200) {
+                container.innerText = "Por favor, ingresa una edad valida   .";
+                return;
+            }
+
+            // Genera las imágenes
+            if(cantidad=10) {
+                var img = document.createElement("img");
+                img.src = "image.png"; // URL de imagen de ejemplo  
+                container.appendChild(img);
+            }
+        }
+
+    </script>
+</body>
+</html>
