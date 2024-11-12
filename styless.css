@@ -6,9 +6,11 @@
     background-color: rgb(245, 245, 245, .7);
     z-index: 99;
     padding: 0 20px;
+    height: 90px;
+    margin-top: -20px;
 }
 .contenedor-header header{
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
     width: 100%;
     display: flex;
@@ -43,6 +45,28 @@
     display: none;
     font-size: 25px;
  }
+
+
+.btn-transparent {
+    background-color: transparent;  /* Fondo transparente */
+    border: 2px solid #ff1133;      /* Borde de color (puedes elegir el color que desees) */
+    color: #ff1133;                 /* Color del texto o ícono (también puedes personalizarlo) */
+}
+
+.btn-transparent:hover {
+    background-color: #ff1133;      /* Fondo cuando se pasa el mouse */
+    color: #fff;                    /* Color del texto o ícono cuando se pasa el mouse */
+}
+
+
+
+#welcomeMessage{
+    display: none;
+}
+
+#link{
+    display:contents;
+}
 
 
  /* *********** */
@@ -117,18 +141,20 @@
 /* SECCION NOSOTROS */
 /* *********** */
 .nosotros{
-    max-width: 1300px;
     margin: auto;
-    height: 75vh;
-    background-color: #dde1e9;
+    height: 105vh;
     padding: 100px 20px;
+    background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/image.png);
+
 }
 .nosotros .fila{
     display: flex;
     align-items: center;
+    
 }
 .nosotros .fila .col{
     width: 50%;
+    color: white;
 }
 .nosotros .fila .col img{
     width: 80%;
@@ -174,16 +200,20 @@
 .servicios{
     color: #fff;
     position: relative;
+    height: 105vh;
+    background:linear-gradient( rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/fondo-servicios.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 .servicios .contenido-seccion{
-    background:linear-gradient( rgba(0, 14, 41, 0.6), rgba(0, 7, 78, 0.7)),url(imgs/fondo-servicios.png);
     background-size: cover;
     background-position: center center;
     margin: auto;
     padding: 0 20px;
 }
 .servicios .contenido-seccion .fila{
-    max-width: 1100px;
+    max-width: 1000px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -206,9 +236,11 @@
     font-weight: bold;
     display: block;
     font-size: 5rem;
+    margin-top: 60px;
 }
 .servicios .fila .col .contenedor-titulo .info{
     margin-left: 30px;
+    margin-top: 60px;
 }
 .servicios .fila .col .contenedor-titulo .info .frase{
     color: #ff1133;
@@ -387,3 +419,93 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+
+
+/* TESTIMONIOS */
+
+.testimonios {
+    color: #fff;
+    position: relative;
+    height: 110vh;
+    background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/fondo-testimonios.png);
+    background-size: cover;
+    background-position: center center;
+}
+
+.testimonios .contenedor-titulo {
+    text-align: center;
+    padding: 120px 20px 60px 20px; /* Cambié el padding superior a 100px */
+}
+
+.testimonios .contenedor-titulo h2 {
+    font-size: 3rem;
+    color: white;
+}
+
+.testimonios .testimonio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    margin-top: -10px;
+    margin-bottom: 35px;
+    max-width: 800px;
+    padding: 10px;
+    background-color: rgba(71, 69, 69, 0.6);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.testimonios .testimonio p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.testimonios .testimonio span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff1133;
+}
+
+.testimonios .testimonio .foto {
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.testimonios .testimonio .foto img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.testimonios .testimonio .nombre {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.testimonios .testimonio .cargo {
+    font-size: 1rem;
+    color: #ff1133;
+}
+
+/* Estilo del contenedor de todos los testimonios */
+.testimonios .testimonio-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+
+
+
+/* GALERIA DE RUTINAS  */
+
+

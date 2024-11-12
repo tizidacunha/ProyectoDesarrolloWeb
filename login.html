@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styless_login.css">
+    <script src="login.js"></script> <!-- Incluimos el archivo JS para la validación -->
+</head>
+<body>
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2>Application<br> Login Page</h2>
+            <p>Login or register from here to access.</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="login-form" id="loginFormContainer">
+                <!-- Formulario de Login -->
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">User Name</label>
+                        <input type="text" id="username" class="form-control" placeholder="User Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-black">Login</button>
+                    <button type="button" class="btn btn-secondary" id="showRegisterFormBtn">Register</button>
+                </form>
+                <div id="errorMessage" style="color: red; display: none;">Invalid username or password</div> <!-- Mensaje de error -->
+            </div>
+
+            <div class="register-form" id="registerFormContainer" style="display: none;">
+                <!-- Formulario de Registro -->
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="newUsername">User Name</label>
+                        <input type="text" id="newUsername" class="form-control" placeholder="User Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="newPassword">Password</label>
+                        <input type="password" id="newPassword" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-black">Register</button>
+                    <button type="button" class="btn btn-secondary" id="showLoginFormBtn">Back to Login</button>
+                </form>
+                <div id="registerErrorMessage" style="color: red; display: none;">Passwords do not match</div> <!-- Mensaje de error del registro -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Array de usuarios y contraseñas
+        var usuarios_contrasenas = [["tiziano", "hola"]];
+
+        // Elementos del DOM
+        const loginFormContainer = document.getElementById('loginFormContainer');
+        const registerFormContainer = document.getElementById('registerFormContainer');
+        const showRegisterFormBtn = document.getElementById('showRegisterFormBtn');
+        const showLoginFormBtn = document.getElementById('showLoginFormBtn');
+        const errorMessage = document.getElementById('errorMessage');
+        const registerErrorMessage = document.getElementById('registerErrorMessage');
+
+        // Mostrar el formulario de registro
+        showRegisterFormBtn.addEventListener('click', function() {
+            loginFormContainer.style.display = 'none';
+            registerFormContainer.style.display = 'block';
+        });
+
+        // Volver al formulario de login
+        showLoginFormBtn.addEventListener('click', function() {
+            registerFormContainer.style.display = 'none';
+            loginFormContainer.style.display = 'block';
+        });
+
+        // Lógica de validación de Login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que se envíe el formulario
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            let loginSuccessful = false;
+
+            // Verificar si el usuario y la contraseña coinciden con alguno en la lista de usuarios_contrasenas
+            for (let i = 0; i < usuarios_contrasenas.length; i++) {
+                if (usuarios_contrasenas[i][0] === username && usuarios_contrasenas[i][1] === password) {
+                    loginSuccessful = true;
+                    break;
+                }
+            }
+
+            if (loginSuccessful) {
+                // Si el login es exitoso, redirigir a gym.html
+                window.location.href = 'index.html?username=' + encodeURIComponent(username);
+            } else {
+                errorMessage.style.display = 'block'; // Mostrar mensaje de error
+            }
+        });
+
+        // Lógica de validación de registro
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto (enviar formulario)
+            
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Verificar si las contraseñas coinciden
+            if (newPassword === confirmPassword) {
+                // Comprobar si el usuario ya existe
+                let userExists = false;
+                for (let i = 0; i < usuarios_contrasenas.length; i++) {
+                    if (usuarios_contrasenas[i][0] === newUsername) {
+                        userExists = true;
+                        break;
+                    }
+                }
+
+                if (userExists) {
+                    alert('Username already exists.');
+                } else {
+                    // Si no existe el usuario, lo agregamos a la lista
+                    usuarios_contrasenas.push([newUsername, newPassword]);
+                    alert('Registration successful');
+                    
+                    // Volver al formulario de login
+                    loginFormContainer.style.display = 'block';
+                    registerFormContainer.style.display = 'none';
+                }
+            } else {
+                registerErrorMessage.style.display = 'block'; // Mostrar mensaje de error si las contraseñas no coinciden
+            }
+        });
+    </script>
+</body>
+</html>
