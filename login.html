@@ -51,6 +51,32 @@
                         <label for="confirmPassword">Confirm Password</label>
                         <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required>
                     </div>
+
+                    <div class="form-group">
+                        <label for="newEmail">Email</label>
+                        <input type="text" id="newEmail" class="form-control" placeholder="Email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newPeso">Peso</label>
+                        <input type="text" id="newPeso" class="form-control" placeholder="Peso" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newEdad">Edad</label>
+                        <input type="text" id="newEdad" class="form-control" placeholder="Edad" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newAltura">Altura</label>
+                        <input type="text" id="newAltura" class="form-control" placeholder="Altura" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="newRegion">Region</label>
+                        <input type="text" id="newRegion" class="form-control" placeholder="Region" required>
+                    </div>
+
                     <button type="submit" class="btn btn-black">Register</button>
                     <button type="button" class="btn btn-secondary" id="showLoginFormBtn">Back to Login</button>
                 </form>
@@ -115,8 +141,15 @@
             const newUsername = document.getElementById('newUsername').value;
             const newPassword = document.getElementById('newPassword').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
+            const email = document.getElementById('Email').value;
+            const edad = document.getElementById('Edad').value;
+            const peso = document.getElementById('Peso').value;
+            const altura = document.getElementById('Altura').value;
+            const region = document.getElementById('Region').value;
 
             // Verificar si las contraseñas coinciden
+
+
             if (newPassword === confirmPassword) {
                 // Comprobar si el usuario ya existe
                 let userExists = false;

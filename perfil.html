@@ -16,10 +16,10 @@
                     <img style="height: 50px;" src="imgs/logo.png" alt="Logo">
                     <h1>GYM <span class="textoColor">SHARK</span></h1>
                     <nav id="nav">
-                        <a href="#inicio" onclick="seleccionar()">inicio</a>
-                        <a href="#nosotros" onclick="seleccionar()">Nosotros</a>
-                        <a href="#servicios" onclick="seleccionar()">Servicios</a>
-                        <a href="#contacto" onclick="seleccionar()">Contacto</a>
+                        <a href="index.html #inicio" onclick="seleccionar()">inicio</a>
+                        <a href="index.html #nosotros" onclick="seleccionar()">Nosotros</a>
+                        <a href="index.html #servicios" onclick="seleccionar()">Servicios</a>
+                        <a href="index.html #contacto" onclick="seleccionar()">Contacto</a>
                         <a href="login.html" id="link" class="btn btn-transparent ms-3"><i class="bi bi-person"></i></a>
                         <a id="welcomeMessage" href="hola.html">Contacto</a>
 
@@ -38,7 +38,6 @@
                     <p>Peso:</p>
                     <P>Altura:</P>
                     <P>Region:</P>
-                    <P>Deporte:</P>
                 </section>
 
                 <section class="rutina">
@@ -52,5 +51,22 @@
             </div>
             
         </main>
-
     </div>
+    <script>
+        // Obtener el botón y la sección
+        const boton = document.getElementById('miBoton');
+        const seccion = document.getElementById('miSeccion');
+
+        // Añadir un evento al botón
+        boton.addEventListener('click', function() {
+            // Cambiar el estado de la sección
+            if (seccion.style.display === 'none') {
+                seccion.style.display = 'block'; // Muestra la sección
+                boton.textContent = 'Ocultar Rutina'; // Cambia el texto del botón
+            } else {
+                seccion.style.display = 'none'; // Oculta la sección
+                boton.textContent = 'Obtener Rutina'; // Cambia el texto del botón
+            }
+        });
+    </script>
+</body>

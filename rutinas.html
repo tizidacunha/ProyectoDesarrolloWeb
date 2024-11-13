@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Shark</title>
+    <link rel="stylesheet" href="styless_rutinas.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="Plugins/OwlCarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="Plugins/OwlCarousel/dist/assets/owl.theme.default.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row contenedor-header">
+                <header>
+                    <img style="height: 50px;" src="imgs/logo.png" alt="Logo">
+                    <h1>GYM <span class="textoColor">SHARK</span></h1>
+                    <nav id="nav">
+                        <a href="index.html #inicio" onclick="seleccionar()">inicio</a>
+                        <a href="index.html #nosotros" onclick="seleccionar()">Nosotros</a>
+                        <a href="index.html #servicios" onclick="seleccionar()">Servicios</a>
+                        <a href="index.html #contacto" onclick="seleccionar()">Contacto</a>
+                        <a href="perfil.html" onclick="seleccionar()">Perfil</a>
+                        <a href="login.html" id="link" class="btn btn-transparent ms-3"><i class="bi bi-person"></i></a>
+                        <a id="welcomeMessage" href="hola.html">Contacto</a>
+
+                    </nav>              
+                </header>
+            </div>
+        </div>
+
+        <div class="owl-carousel">
+
+            <a href="fullbody.html" onclick="seleccionar()">
+                <div class="elementos">
+                    <h4>FULL BODY</h4>
+                    <img src="imgs/fullbody.png" alt="imagen fullbody">
+                    <p style="margin-top: 20px;">Una rutina full body es un entrenamiento que involucra a todos los músculos del cuerpo, y suele incluir ejercicios multiarticulares y monoarticulares. Son sesiones completas que implican un alto gasto calórico</p>
+                </div>
+            </a>
+
+            <a href="push-pull.html" onclick="seleccionar()">
+                <div class="elementos">
+                    <h4>PUSH-PULL-LEGS</h4>
+                    <img src="imgs/push-pull.png" alt="imagen push-pull-legs">
+                    <p style="margin-top: 20px;">Push, pull, leg, es una técnica de musculación que trabaja el cuerpo en tres grupos diferentes: los músculos de la parte superior del cuerpo capaces de empujar (push), los músculos de la parte superior del cuerpo capaces de tirar (pull) y las piernas (leg).</p>
+                 </div>
+            </a>
+
+            <a href="Arnold.html" onclick="seleccionar()">
+                <div class="elementos">
+                    <h4>Arnold Split</h4>
+                    <img src="imgs/arnold2.png" alt="imagen arnold">
+                    <p style="margin-top: 20px;">El método Split consiste en trabajar uno o dos grupos musculares durante cada sesión de entrenamiento. En cada sesión hay que multiplicar el número de series para hacerlas más intensas y optimizar los resultados.</p>
+                </div>
+            </a>
+            
+        </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Plugins/OwlCarousel/dist/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsiveClass:true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 3,
+                        nav: false
+                    },
+                    2000: {
+                        items: 5,
+                        nav: true,
+                        loop: false
+                    }
+                }
+            });
+        });
+    </script>
