@@ -63,7 +63,7 @@
 
 body{
     height: 100vh;
-    background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url("../imgs/background-arnold.png");
+    background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url("../imgs/fullbody-background.png");
     background-size: cover;
     background-position: center center;
     color: #fff;
@@ -75,7 +75,7 @@ h2{
 }
 
 .titulo{ 
-    color: #ff1133;
+    color:#3956cb;
     font-size: 58px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
@@ -95,7 +95,7 @@ h2{
 
 .titulo-rutina{
     text-align: center;
-    color:#ff1133;
+    color:#3956cb;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: underline;
