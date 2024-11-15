@@ -102,49 +102,61 @@ img{
     text-decoration: none;
 }
 
+
 @media (max-width:768px) {
-    .contenedor-header nav {
-        display:inline-block;
-    }
-
-    .logo{
-        margin-top: 10px;
-    }
-
-    .contenedor-header nav a {
-        font-size: 14px;
-    }
-
-    .nav-responsive {
+    .hamburguer-menu{
         display: block;
     }
 
-    .inicio .info h2 {
-        font-size: 2rem;
+    .hamburger-content {
+        display: none; /* Mostrar solo al activar */
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 200px;
+    }
+
+    .hamburger-content a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
         text-align: center;
     }
 
-    .contenedor-header header nav a{
-        padding: 10px;
+    #nav a{
+        display: none;
+    }
     
+
+    .logo {
+        height: 40px; /* Tamaño más pequeño para pantallas móviles */
+        margin-top: 8px;
     }
 
-    .inicio .info p {
-        font-size: 12px;
-        letter-spacing: 2px;
+    #logoName {
+        font-size: 34px; /* Reducir el tamaño del texto del logo */
+        margin-top: 8px;
     }
 
-    .inicio .opciones {
-        flex-direction: column; /* Coloca las opciones en una columna */
-        align-items: center;
+    .elementos h4{
+        font-size: 16px;
     }
 
-    .nosotros .fila {
-        flex-direction: column; /* Ajusta la sección de 'nosotros' para pantallas pequeñas */
+
+}
+
+
+@media (min-width: 769px) {
+    
+
+    .hamburger-menu {
+        display: none; /* Ocultar menú hamburguesa */
     }
 
-    .nosotros .fila .col {
-        width: 100%;
+    .hamburger-content{
+        display: none;
     }
 
 }

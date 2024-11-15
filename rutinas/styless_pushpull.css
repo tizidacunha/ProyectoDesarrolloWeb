@@ -157,3 +157,60 @@ h2{
     }
 
 }
+
+@media (max-width:768px) {
+    .hamburguer-menu{
+        display: block;
+    }
+
+    .hamburger-content {
+        display: none; /* Mostrar solo al activar */
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 200px;
+    }
+
+    .hamburger-content a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    #nav a{
+        display: none;
+    }
+    
+
+    .logo {
+        height: 40px; /* Tamaño más pequeño para pantallas móviles */
+        margin-top: 8px;
+    }
+
+    #logoName {
+        font-size: 34px; /* Reducir el tamaño del texto del logo */
+        margin-top: 8px;
+    }
+
+    .elementos h4{
+        font-size: 16px;
+    }
+
+
+}
+
+
+@media (min-width: 769px) {
+    
+    .hamburger-menu {
+        display: none; /* Ocultar menú hamburguesa */
+    }
+
+    .hamburger-content{
+        display: none;
+    }
+
+}

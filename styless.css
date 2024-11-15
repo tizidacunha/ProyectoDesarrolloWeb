@@ -4,14 +4,10 @@
     border-bottom: 1px solid #1f283e;
     background-color: rgba(0,0,0,.7);
     background-color: rgb(245, 245, 245, .7);
-    z-index: 99;
-    padding: 0 20px;
     height: 90px;
     margin-top: -20px;
 }
 .contenedor-header header{
-
-    margin: auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -49,19 +45,6 @@
  }
 
 
-.btn-transparent {
-    background-color: transparent;  /* Fondo transparente */
-    border: 2px solid #ff1133;      /* Borde de color (puedes elegir el color que desees) */
-    color: #ff1133;                 /* Color del texto o ícono (también puedes personalizarlo) */
-}
-
-.btn-transparent:hover {
-    background-color: #ff1133;      /* Fondo cuando se pasa el mouse */
-    color: #fff;                    /* Color del texto o ícono cuando se pasa el mouse */
-}
-
-
-
 #welcomeMessage{
     display: none;
 }
@@ -74,17 +57,19 @@
  /* *********** */
 /* SECCIÓN INICIO */
 /* *********** */
+
+
 .inicio{
     height: 100vh;
     background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/image.png);
     background-size: cover;
     background-position: center center;
     color: #fff;
+    width: 100%;
 }
 
 .inicio .info{
-    width:fit-content;
-    margin: auto;
+    width: 100%;
     position: absolute;
     top:50%;
     left: 50%;
@@ -92,7 +77,7 @@
     text-align: center;
 }
 .inicio .info h2{
-    font-size: 3rem;
+    font-size: 62px;
     font-family:'Courier New', Courier, monospace;
     letter-spacing: 3px;
 }
@@ -117,6 +102,7 @@
     margin-top: 50px;
     text-decoration: none;
 }
+
 .opciones{
     position: absolute;
     display: flex;
@@ -132,61 +118,10 @@
     margin: 0 20px;
 }
 
-@media (max-width:768px) {
-    .contenedor-header nav {
-        display:inline-block;
-    }
-
-    .logo{
-        margin-top: 10px;
-    }
-
-    .contenedor-header nav a {
-        font-size: 14px;
-    }
-
-    .nav-responsive {
-        display: block;
-    }
-
-    .inicio .info h2 {
-        font-size: 2rem;
-        text-align: center;
-    }
-
-    .contenedor-header header nav a{
-        padding: 10px;
-    
-    }
-
-    .inicio .info p {
-        font-size: 12px;
-        letter-spacing: 2px;
-    }
-
-    .inicio .opciones {
-        flex-direction: column; /* Coloca las opciones en una columna */
-        align-items: center;
-    }
-
-    .nosotros .fila {
-        flex-direction: column; /* Ajusta la sección de 'nosotros' para pantallas pequeñas */
-    }
-
-    .nosotros .fila .col {
-        width: 100%;
-    }
-
-}
-
-
-/* *********** */
-/* SECCION NOSOTROS */
-/* *********** */
 .nosotros{
     margin: auto;
     height: 105vh;
-    padding: 100px 20px;
+    width: 100%;
     background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/image.png);
 
 }
@@ -242,7 +177,7 @@
 
 .servicios{
     color: #fff;
-    position: relative;
+    width: 100%;
     height: 105vh;
     background:linear-gradient( rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/fondo-servicios.png);
     background-repeat: no-repeat;
@@ -375,12 +310,7 @@
 
 
 
-.rutinas {
-    max-width: 1300px;
-    margin: auto;
-    height: 70vh;
-    padding: 100px 20px;
-}
+
 
 .rutinas .fila {
     display: flex;
@@ -470,7 +400,7 @@
 
 .testimonios {
     color: #fff;
-    position: relative;
+    
     height: 110vh;
     background:linear-gradient(rgba(0, 1, 3, 0.5), rgba(0,0,0,.7)),url(imgs/fondo-testimonios.png);
     background-size: cover;
@@ -523,6 +453,7 @@
     width: 80px;
     height: 80px;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .testimonios .testimonio .nombre {
@@ -547,8 +478,124 @@
 
 
 
+@media (max-width: 768px) {
+    /* Ajustes de logo y texto */
+    .inicio .contenido-seccion .info h2{
+        text-align: center;
+        margin-top: 50px;
+        font-size: 55px;
+    } 
+
+    .logo {
+        height: 40px; /* Tamaño más pequeño para pantallas móviles */
+        margin-top: 8px;
+    }
+
+    #logoName {
+        font-size: 34px; /* Reducir el tamaño del texto del logo */
+        margin-top: 8px;
+    }
+
+    /* Ocultar menú de navegación principal */
+    #nav {
+        display: none;
+    }
+
+    /* Mostrar menú hamburguesa */
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-content {
+        display: none; /* Mostrar solo al activar */
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        width: 200px;
+    }
+
+    .hamburger-content a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .contenedor-header h1{
+        font-size: 20px;
+    }
+}
+
+/* Media query para pantallas medianas (tablets y laptops pequeños) */
+@media (max-width: 1024px) {
+    .inicio h2 {
+        font-size: 22px;
+    }
+
+    .opcion {
+        font-size: 14px; /* Ajustar opciones */
+    }
+
+}
 
 
-/* GALERIA DE RUTINAS  */
+@media (min-width: 1024px) {
+    
 
+    .hamburger-menu {
+        display: none; /* Ocultar menú hamburguesa */
+    }
+
+    .hamburger-content{
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 425px) {
+    
+    .testimonios .testimonio-contenedor .testimonio {
+        width:45%;
+    }
+
+    .contenedor-header header {
+        text-align: center;
+    }
+
+
+    .inicio .info .textoColor {
+        font-size: 40px; /* Reduce el tamaño del texto */
+    }
+
+    .inicio .info .btn-mas {
+        width: 40px; /* Reduce tamaño del botón */
+        height: 40px;
+    }
+
+    .nosotros .fila {
+        flex-direction: column; /* Apilar columnas */
+    }
+
+    .nosotros .fila .col {
+        width: 100%; /* Usa todo el ancho */
+        text-align: center; /* Centra contenido */
+    }
+
+    .nosotros .fila .col img {
+        width: 75%; /* Imagen de Nosotros */
+    }
+
+
+    .fila-nosotros h2,
+    .fila-nosotros .frase {
+        margin-left: 0; /* Titulo al lado del boton en servicios */
+    }
+
+    .fila-nosotros button {
+        margin-top: 15px; /* Agregar espaciado */
+    }
+}
 
