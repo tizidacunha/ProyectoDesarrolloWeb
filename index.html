@@ -13,7 +13,7 @@
         <div class="contenedor-header">
                 <header>
                     <img class="logo"style="height: 50px;" src="imgs/logo.png" alt="Logo">
-                    <h1>GYM <span class="textoColor">SHARK</span></h1>
+                    <h1 id="logoName">GYM <span class="textoColor">SHARK</span></h1>
                     <nav id="nav">
                         <a href="#inicio">inicio</a>
                         <a href="#nosotros">Nosotros</a>
@@ -22,8 +22,21 @@
                         <a href="perfil.html">Perfil</a>
                         <a href="login.html" id="link" class="btn btn-transparent ms-3"><i class="bi bi-person"></i></a>
                         <a id="welcomeMessage" href="hola.html">Contacto</a>
+                    </nav>            
+                    
+                    <div class="hamburger-menu" onclick="toggleHamburgerMenu()">
+                        &#9776;
+                    </div>
+            
+                    <div class="hamburger-content" id="hamburger-content">
+                        <a href="#inicio">Inicio</a>
+                        <a href="#nosotros">Nosotros</a>
+                        <a href="#servicios">Servicios</a>
+                        <a href="#contacto">Contacto</a>
+                        <a href="perfil.html">Perfil</a>
+                    </div>
 
-                    </nav>              
+
                 </header>
             
         </div>
@@ -154,7 +167,7 @@
                 <div class="testimonio-contenedor">
                     <div class="testimonio">
                         <div class="foto">
-                            <img src="cliente1.jpg" alt="Juan Pérez">
+                            <img src="./imgs/client_1.jpeg" alt="Juan Pérez">
                         </div>
                         <p>"Desde que empecé con las rutinas personalizadas, he visto resultados increíbles. ¡Recomiendo Gym Shark!"</p>
                         <div class="nombre">Juan Pérez</div>
@@ -162,7 +175,7 @@
                     </div>
                     <div class="testimonio">
                         <div class="foto">
-                            <img src="cliente2.jpg" alt="Ana Gómez">
+                            <img src="./imgs/locomotora.jpeg" alt="Ana Gómez">
                         </div>
                         <p>"Los entrenadores son muy profesionales y siempre están disponibles para resolver dudas. ¡Me encanta!"</p>
                         <div class="nombre">Ana Gómez</div>
@@ -192,7 +205,7 @@
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <div class="col-md-4 d-flex align-items-center">
-                <span class="mb-3 mb-md-0 text-body-secondary">&copy; <ul><li>hola</li><li>hola2</li></ul>2024 Company, Inc</span>
+                <span class="mb-3 mb-md-0 text-body-secondary"> <ul><li>&copy; Marca Registrada</li><li>Contacto GymShark</li><li>Boton de arrepentimiento</li><li>Comunidad GymShark</li><li>Quiero ser parte del equipo</li></ul>2024 Company, Inc</span>
             </div>
         
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
@@ -270,6 +283,15 @@
             document.getElementById('welcomeMessage').innerText = `Hola, ${username}!`;
         }
 
+
+        function toggleHamburgerMenu() {
+            const menu = document.getElementById('hamburger-content');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
 
 
     </script>
