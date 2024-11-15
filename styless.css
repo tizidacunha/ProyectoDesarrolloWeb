@@ -475,8 +475,65 @@
     justify-content: center;
 }
 
+@media(max-width: 400px){
+    .contenedor-titulo {
+        display: flex;
+        flex-direction: column;
+        font-size: xx-small;
+    }
 
+    #tit2{
+        font-size: small;
+    }
 
+    .textoColor{
+        font-size: small;
+    }
+
+    #testimonios {
+        min-height: fit-content;
+    }
+}
+
+@media (max-width:400px){
+    #obtenerutina{
+        display: none;
+    }
+
+    .fila-nosotros{
+        display: flex;
+        flex-direction: column;
+    }
+
+    h2{
+        font-size: small;
+    }
+
+    .textoColor {
+        font-size: small;
+    }
+
+    .testimonios{
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .contacto {
+        padding-top: 100px;
+    }
+}
+
+@media(max-width:771px){
+    .contenedor-titulo{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #nosdiv {
+        display: flex;
+        flex-direction: column;
+    }
+}
 
 @media (max-width: 768px) {
     /* Ajustes de logo y texto */
@@ -599,3 +656,16 @@
     }
 }
 
+@media (min-width:769px) and (max-width:1023px) {
+    .hamburger-content{
+        display: none;
+    }
+
+    .hamburger-menu{
+        display: none;
+    }
+
+    .contenedor-header header #logoName{
+        font-size: 25px;
+    }
+}
