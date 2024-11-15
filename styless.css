@@ -10,7 +10,7 @@
     margin-top: -20px;
 }
 .contenedor-header header{
-    max-width: 1000px;
+
     margin: auto;
     width: 100%;
     display: flex;
@@ -19,6 +19,7 @@
     padding: 20px 0;
     color: black;
 }
+
 .textoColor{
     color:blue;
 }
@@ -29,6 +30,14 @@
     padding: 25px;
     text-transform: uppercase;
 }
+
+@media (max-width:1024px) {
+    .contenedor-header header nav a{
+        padding: 10px;
+    
+    }
+}
+
 .contenedor-header header nav a:hover{
     color: #ff1133;
 }
@@ -101,6 +110,7 @@
     letter-spacing: 3px;
     text-transform: uppercase;
 }
+
 .inicio .info .btn-mas{
     width: 50px;
     margin: auto;
@@ -129,7 +139,47 @@
     margin: 0 20px;
 }
 
+@media (max-width:768px) {
+    .contenedor-header nav {
+        display:inline-block;
+    }
 
+    .logo{
+        margin-top: 10px;
+    }
+
+    .contenedor-header nav a {
+        font-size: 14px;
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+
+    .inicio .info h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .inicio .info p {
+        font-size: 12px;
+        letter-spacing: 2px;
+    }
+
+    .inicio .opciones {
+        flex-direction: column; /* Coloca las opciones en una columna */
+        align-items: center;
+    }
+
+    .nosotros .fila {
+        flex-direction: column; /* Ajusta la sección de 'nosotros' para pantallas pequeñas */
+    }
+
+    .nosotros .fila .col {
+        width: 100%;
+    }
+
+}
 
 
 /* *********** */
