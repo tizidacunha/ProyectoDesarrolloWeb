@@ -25,7 +25,7 @@
     color: black;
 }
 .textoColor{
-    color:blue;
+    color:yellow;
 }
 .contenedor-header header nav a{
     display: inline-block;
@@ -75,9 +75,9 @@ h2{
 }
 
 .titulo{ 
-    color: #5d5be6;
+    color: yellow;
     font-size: 58px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
     text-decoration: underline;
 }
 /*APLICAR MEDIA QUERY*/
@@ -90,14 +90,14 @@ h2{
 .descripcion{
     font-size: 20px;
     color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .titulo-rutina{
     text-align: center;
-    color:#5d5be6;
+    color:yellow;
     font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
     text-decoration: underline;
 }
 
@@ -106,7 +106,7 @@ h2{
     width: 100%;
     color: aliceblue;
     font-size: 14px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 
 }

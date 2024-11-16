@@ -25,7 +25,7 @@
     color: black;
 }
 .textoColor{
-    color:blue;
+    color:yellow;
 }
 .contenedor-header header nav a{
     display: inline-block;
@@ -69,10 +69,10 @@ body{
 }
 
 h4{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
     text-decoration: underline;
-    color: blue;
+    color: yellow;
 }
 
 .elementos{
@@ -93,7 +93,7 @@ img{
 }
 
 .owl-carousel a{
-    color:blue;
+    color:yellow;
     text-decoration: none;
 }
 
