@@ -12,8 +12,8 @@
 <body>
     <div class="sidenav">
         <div class="login-main-text">
-            <h2>Application<br> Login Page</h2>
-            <p>Login or register from here to access.</p>
+            <h2>Ingrea a GymShark<br></h2>
+            <p>Ingresa a tu cuenta o registra tu nuevo usuario!</p>
         </div>
     </div>
     <div class="main">
@@ -83,97 +83,102 @@
             </div>
         </div>
     </div>
-
     <script>
-        // Array de usuarios y contraseñas
-        var usuarios_contrasenas = [["tiziano", "hola"]];
-
-        // Elementos del DOM
         const loginFormContainer = document.getElementById('loginFormContainer');
         const registerFormContainer = document.getElementById('registerFormContainer');
         const showRegisterFormBtn = document.getElementById('showRegisterFormBtn');
         const showLoginFormBtn = document.getElementById('showLoginFormBtn');
         const errorMessage = document.getElementById('errorMessage');
         const registerErrorMessage = document.getElementById('registerErrorMessage');
-
-        // Mostrar el formulario de registro
+    
         showRegisterFormBtn.addEventListener('click', function() {
             loginFormContainer.style.display = 'none';
             registerFormContainer.style.display = 'block';
         });
-
-        // Volver al formulario de login
+    
         showLoginFormBtn.addEventListener('click', function() {
             registerFormContainer.style.display = 'none';
             loginFormContainer.style.display = 'block';
         });
-
-        // Lógica de validación de Login
+    
+        function getUsers() {
+            return JSON.parse(localStorage.getItem('users')) || [];
+        }
+    
+        function saveUsers(users) {
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+    
+        function setCurrentUser(user) {
+            sessionStorage.setItem('currentUser', JSON.stringify(user));
+        }
+    
         document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evitar que se envíe el formulario
-
+            event.preventDefault();
+    
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-
-            let loginSuccessful = false;
-
-            // Verificar si el usuario y la contraseña coinciden con alguno en la lista de usuarios_contrasenas
-            for (let i = 0; i < usuarios_contrasenas.length; i++) {
-                if (usuarios_contrasenas[i][0] === username && usuarios_contrasenas[i][1] === password) {
-                    loginSuccessful = true;
-                    break;
-                }
-            }
-
-            if (loginSuccessful) {
-                // Si el login es exitoso, redirigir a gym.html
+            const users = getUsers();
+    
+            const user = users.find(user => user.username === username && user.password === password);
+    
+            if (user) {
+                setCurrentUser(user); 
+                alert('Login successful!');
                 window.location.href = 'index.html?username=' + encodeURIComponent(username);
             } else {
-                errorMessage.style.display = 'block'; // Mostrar mensaje de error
+                errorMessage.style.display = 'block'; 
             }
         });
-
-        // Lógica de validación de registro
+    
         document.getElementById('registerForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevenir el comportamiento por defecto (enviar formulario)
-            
+            event.preventDefault();
+    
             const newUsername = document.getElementById('newUsername').value;
             const newPassword = document.getElementById('newPassword').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
-            const email = document.getElementById('Email').value;
-            const edad = document.getElementById('Edad').value;
-            const peso = document.getElementById('Peso').value;
-            const altura = document.getElementById('Altura').value;
-            const region = document.getElementById('Region').value;
-
-            // Verificar si las contraseñas coinciden
-
-
-            if (newPassword === confirmPassword) {
-                // Comprobar si el usuario ya existe
-                let userExists = false;
-                for (let i = 0; i < usuarios_contrasenas.length; i++) {
-                    if (usuarios_contrasenas[i][0] === newUsername) {
-                        userExists = true;
-                        break;
-                    }
-                }
-
-                if (userExists) {
-                    alert('Username already exists.');
-                } else {
-                    // Si no existe el usuario, lo agregamos a la lista
-                    usuarios_contrasenas.push([newUsername, newPassword]);
-                    alert('Registration successful');
-                    
-                    // Volver al formulario de login
-                    loginFormContainer.style.display = 'block';
-                    registerFormContainer.style.display = 'none';
-                }
-            } else {
-                registerErrorMessage.style.display = 'block'; // Mostrar mensaje de error si las contraseñas no coinciden
+            const newEmail = document.getElementById('newEmail').value;
+            const newPeso = document.getElementById('newPeso').value;
+            const newEdad = document.getElementById('newEdad').value;
+            const newAltura = document.getElementById('newAltura').value;
+            const newRegion = document.getElementById('newRegion').value;
+    
+            const users = getUsers();
+    
+            if (newPassword !== confirmPassword) {
+                registerErrorMessage.style.display = 'block'; 
+                return;
             }
+    
+            if (users.some(user => user.username === newUsername)) {
+                alert('Username already exists.');
+                return;
+            }
+    
+            if (users.some(user => user.email === newEmail)) {
+                alert('Email already registered.');
+                return;
+            }
+    
+            const newUser = {
+                username: newUsername,
+                password: newPassword,
+                email: newEmail,
+                peso: newPeso,
+                edad: newEdad,
+                altura: newAltura,
+                region: newRegion
+            };
+    
+            users.push(newUser);
+            saveUsers(users);
+    
+            setCurrentUser(newUser);
+            alert('Registration successful!');
+    
+            registerFormContainer.style.display = 'none';
+            loginFormContainer.style.display = 'block';
         });
-    </script>
+    </script>    
 </body>
 </html>

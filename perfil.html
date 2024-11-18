@@ -15,13 +15,12 @@
                     <img style="height: 50px;" src="imgs/logo.png" alt="Logo">
                     <h1>GYM <span class="textoColor">SHARK</span></h1>
                     <nav id="nav">
-                        <a href="index.html #inicio">inicio</a>
-                        <a href="index.html #nosotros">Nosotros</a>
-                        <a href="index.html #servicios">Servicios</a>
-                        <a href="index.html #contacto">Contacto</a>
-                        <a href="login.html" id="link" class="btn btn-transparent ms-3"><i class="bi bi-person"></i></a>
+                        <a href="index.html#inicio">inicio</a>
+                        <a href="index.html#nosotros">Nosotros</a>
+                        <a href="index.html#servicios">Servicios</a>
+                        <a href="index.html#contacto">Contacto</a>
+                        <a href="login.html" id="link" class="btn btn-transparent ms-3"><i class="bi bi-box-arrow-right"></i></a>
                         <a id="welcomeMessage" href="hola.html">Contacto</a>
-
                     </nav> 
                     
                     <div class="hamburger-menu" onclick="toggleHamburgerMenu()">
@@ -74,6 +73,38 @@
                 menu.style.display = 'block';
             }
         }
+    </script>
+    <script>
+        function displayUserProfile() {
+            const currentUser = JSON.parse(sessionStorage.getItem('currentUser')); // Retrieve the current user from sessionStorage
+    
+            if (currentUser) {
+                const profileSection = document.querySelector('.datos');
+                profileSection.innerHTML = `
+                    <h2>Datos:</h2>
+                    <p>Nombre: ${currentUser.username || 'N/A'}</p>
+                    <p>Edad: ${currentUser.edad || 'N/A'}</p>
+                    <p>Email: ${currentUser.email || 'N/A'}</p>
+                    <p>Peso: ${currentUser.peso || 'N/A'}</p>
+                    <p>Altura: ${currentUser.altura || 'N/A'}</p>
+                    <p>Region: ${currentUser.region || 'N/A'}</p>
+                `;
+    
+                const rutinaSection = document.querySelector('.rutina');
+                rutinaSection.innerHTML = `
+                    <h2>Rutina:</h2>
+                    <p>Objetivo: ${currentUser.objetivo || 'No definido'}</p>
+                    <p>Ejercicio Favorito: ${currentUser.ejercicioFavorito || 'No definido'}</p>
+                    <p>Mis Rutinas: ${currentUser.misRutinas || 'No definido'}</p>
+                    <p>Mis Ejercicios: ${currentUser.misEjercicios || 'No definido'}</p>
+                `;
+            } else {
+                alert('No user is currently logged in. Redirecting to the login page.');
+                window.location.href = 'login.html';
+            }
+        }
+    
+        displayUserProfile();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
